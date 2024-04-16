@@ -1,4 +1,8 @@
+/* Chave da API para push da ação do tempo */
+
 let chave = 'cebcd482eda57fa9a6714c1c2ba91885';
+
+/* Função criada para fazer a interação com o HTML e alteração das informações a cada pesquisa */ 
 
 function colocarNaTela(dados){
   console.log(dados)
@@ -9,6 +13,8 @@ function colocarNaTela(dados){
   document.querySelector('.umidade').innerHTML = "Umidade: " + Math.floor(dados.main.humidity) + "%"
 }
 
+/* API criada para o funcionamento completo da busca */ 
+
 
 async function buscarCidade(cidade) {
   let dados = await fetch(
@@ -17,6 +23,9 @@ async function buscarCidade(cidade) {
 
   colocarNaTela(dados);
 }
+
+/* Função criada para puxar os dados da API ao pesquisar a cidade */ 
+
 
 function cliqueiNoBotao() {
   let cidade = document.querySelector('.input-cidade').value;
